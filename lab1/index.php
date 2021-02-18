@@ -114,36 +114,31 @@
     <?php include_once("header.inc.php");?>
 
     <main>
+        <?php foreach($checkins as $checkin): ?>
+            <?php if($checkin["distance"] <= DISTANCE):?>
+                <div class="checkin">
+                    <div class="checkin_left">
+                        <div class="profile_picture">
+                            <img src="<?php echo $checkin["profile_picture"]; ?>"/>
+                        </div>
+                    </div>
 
-        <?php // todo3 : lus over je checkins en print deze visueel af zoals op de screenshots/screenshot1.png
-        
-            foreach($checkins as $checkin) {
-                echo "<div class=\"checkin\">";
-                    echo "<div class=\"checkin_left\">";
-                        echo "<div class=\"profile_picture\">";
-                            echo "<img class=\"profile_picture\" src=\"" . $checkin["profile_picture"] . "\"/>";
-                        echo "</div>";
-                    echo "</div>";
-                    
-                    echo "<div class=\"checkin_right\">";
-                        echo "<p class=\"username\">" . $checkin["username"] . "</p>";
-                        echo "<p class=\"place\">" . $checkin["place"] . "</p>";
-                        echo "<p class=\"location\">" . $checkin["location"] . "</p>";
-                        
-                        if(!empty($checkin["message"])) {
-                            echo "<p class=\"message\">" . $checkin["message"] . "</p>";
-                        }
+                    <div class="checkin_right">
+                        <p class="username"><?php echo $checkin["username"]; ?></p>
+                        <p class="place"><?php echo $checkin["place"]; ?></p>
+                        <p class="location"><?php echo $checkin["location"]; ?></p>
 
-                        if(!empty($checkin["picture"])) {
-                            echo "<img class=\"checkin_picture\" src=\"" . $checkin["picture"] . "\"/>";
-                        }
-                        
-                    echo "</div>";
-                echo "</div>";
-            }
+                        <?php if(!empty($checkin["message"])): ?>
+                            <p class="message"><?php echo $checkin["message"]; ?></p>
+                        <?php endif; ?>
 
-        ?>
-
+                        <?php if(!empty($checkin["picture"])): ?>
+                            <img src="<?php echo $checkin["picture"]; ?>" class="checkin_picture"/>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </main>
 
     <?php // todo4 : zorg dat je header en footer opgehaald wordt vanuit footer.inc.php en header.inc.php zodat je deze kan hergebruiken op meerdere schermen?>
