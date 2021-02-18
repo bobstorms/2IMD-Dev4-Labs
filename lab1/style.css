@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+header {
+    height: 60px;
+    background-color: #ffa633;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+}
+
+footer {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    width: 100%;
+    padding: 0 1em;
+    font-size: .9em;
+    color: #575757;
+    background-color: #e0e0e0;
+}
+
+.logo {
+    height: 25px;
+}
+
+main {
+    margin-top: 60px;
+    margin-bottom: 38px;
+    padding: 1em;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.checkin:first-child {
+    margin-top: 0;
+}
+
+.checkin:last-child {
+    margin-bottom: 0;
+}
+
+.checkin {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.checkin_right {
+    margin-left: 1em;
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profile_picture {
+    height: 60px;
+    width: 60px;
+
+    border-radius: 100px;
+
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+
+.profile_picture img {
+    width: 100%;
+    height: auto;
+}
+
+.checkin_picture {
+    width: 100%;
+    max-width: 500px;
+    margin-top: .3em;
+}
+
+.username {
+    font-size: .9em;
+    font-weight: 600;
+    color: #696969;
+    margin-bottom: .3em;
+}
+
+.place {
+    color: #ffa633;
+    font-size: 1.25em;
+}
+
+.location {
+    color: #696969;
+    font-size: .9em;
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
+
+.message {
+    margin-top: .5em;
+}
