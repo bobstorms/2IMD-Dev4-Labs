@@ -2,7 +2,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode
 
 ### General ###
-theorie
+theorie/
+course/
+solutions/
 
 ### macOS ###
 # General
