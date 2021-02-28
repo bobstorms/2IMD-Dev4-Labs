@@ -16,7 +16,6 @@
   require_once("header.php");
   ?>
 
-
   <section class="content">
     <div class="content__left">
       <section class="navigation">
@@ -28,11 +27,8 @@
             aria-expanded="true" aria-controls="yourMusic">Your Music
           </div>
           <div class="collapse in" id="yourMusic">
-            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Albums</span>
-            </a>
-            <a href="#" class="navigation__list__item"><i class="ion-person"></i><span>Artists</span>
-            </a>
-
+            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Albums</span></a>
+            <a href="#" class="navigation__list__item"><i class="ion-person"></i><span>Artists</span></a>
           </div>
         </div>
         <!-- / -->
@@ -53,11 +49,10 @@
         <!-- / -->
       </section>
 
-
-      <section class="playlist"><a href="#">
-          <i class="ion-ios-plus-outline"></i>New Playlist
-        </a>
+      <section class="playlist">
+        <a href="#"><i class="ion-ios-plus-outline"></i>New Playlist</a>
       </section>
+
       <section class="playing">
         <div class="playing__art"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/cputh.jpg"
             alt="Album Art" /></div>

@@ -23,43 +23,34 @@
         <!-- / -->
         <!-- Your Music -->
         <div class="navigation__list">
-          <div class="navigation__list__header" role="button" data-toggle="collapse" href="#yourMusic"
-            aria-expanded="true" aria-controls="yourMusic">Your Music
-          </div>
+          <div class="navigation__list__header" role="button" data-toggle="collapse" href="#yourMusic" aria-expanded="true" aria-controls="yourMusic">Your Music</div>
           <div class="collapse in" id="yourMusic">
-            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Albums</span>
-            </a>
-            <a href="#" class="navigation__list__item"><i class="ion-person"></i><span>Artists</span>
-            </a>
-
+            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Albums</span></a>
+            <a href="#" class="navigation__list__item"><i class="ion-person"></i><span>Artists</span></a>
           </div>
         </div>
         <!-- / -->
         <!-- Playlists -->
         <div class="navigation__list">
-          <div class="navigation__list__header" role="button" data-toggle="collapse" href="#playlists"
-            aria-expanded="true" aria-controls="playlists">Playlists
-          </div>
+          <div class="navigation__list__header" role="button" data-toggle="collapse" href="#playlists" aria-expanded="true" aria-controls="playlists">Playlists</div>
           <div class="collapse in" id="playlists">
-
-            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Playlist name goes
-                here</span></a>
-
-            </a>
+            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Playlist name goes here</span></a>
           </div>
         </div>
         <!-- / -->
       </section>
 
-      <section class="playlist"><a href="#">
-          <i class="ion-ios-plus-outline"></i>New Playlist
-        </a>
+      <section class="playlist">
+        <a href="#"><i class="ion-ios-plus-outline"></i>New Playlist</a>
       </section>
       <section class="playing">
-        <div class="playing__art"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/cputh.jpg"
-            alt="Album Art" /></div>
-        <div class="playing__song"><a class="playing__song__name">Some Type of Love</a><a
-            class="playing__song__artist">Charlie Puth</a></div>
+        <div class="playing__art">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/cputh.jpg" alt="Album Art"/>
+        </div>
+        <div class="playing__song">
+          <a class="playing__song__name">Some Type of Love</a>
+          <a class="playing__song__artist">Charlie Puth</a>
+        </div>
         <div class="playing__add"><i class="ion-checkmark"></i></div>
       </section>
     </div>
@@ -67,24 +58,26 @@
       <div class="artist is-verified">
         <div class="artist__header">
           <div class="artist__info">
-            <div class="profile__img"><img src="https://loremflickr.com/320/320/1?lock=1" alt="Artist name here" />
+            <div class="profile__img">
+              <img src="https://loremflickr.com/320/320/1?lock=1" alt="Artist name here"/>
             </div>
             <div class="artist__info__meta">
               <div class="artist__info__type">Artist</div>
               <div class="artist__info__name">Eveline Collins PhD</div>
-              <div class="artist__info__actions"><button class="button-dark"><i class="ion-ios-play"></i>Play
-                </button>
-                <button class="button-light">Follow</button><button class="button-light more"><i
-                    class="ion-ios-more"></i></button>
+              <div class="artist__info__actions">
+                <button class="button-dark"><i class="ion-ios-play"></i>Play</button>
+                <button class="button-light">Follow</button><button class="button-light more"><i class="ion-ios-more"></i></button>
               </div>
             </div>
           </div>
           <div class="artist__navigation">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#artist-overview" aria-controls="artist-overview"
-                  role="tab" data-toggle="tab">Overview</a></li>
-              <li role="presentation"><a href="#related-artists" aria-controls="related-artists" role="tab"
-                  data-toggle="tab">Related Artists</a></li>
+              <li role="presentation" class="active">
+                <a href="#artist-overview" aria-controls="artist-overview" role="tab" data-toggle="tab">Overview</a>
+              </li>
+              <li role="presentation">
+                <a href="#related-artists" aria-controls="related-artists" role="tab" data-toggle="tab">Related Artists</a>
+              </li>
               <!--<li role="presentation"><a href="#artist-about" aria-controls="artist-about" role="tab" data-toggle="tab">About</a></li>-->
             </ul>
 
@@ -96,22 +89,26 @@
             <div role="tabpanel" class="tab-pane active" id="artist-overview">
               <div class="overview">
                 <div class="overview__albums">
-                  <div class="overview__albums__head"><span class="section-title">Albums</span><span
-                      class="view-type"><i class="fa fa-list list active"></i><i class="fa fa-th-large card"></i></span>
+                  <div class="overview__albums__head">
+                    <span class="section-title">Albums</span>
+                    <span class="view-type"><i class="fa fa-list list active"></i><i class="fa fa-th-large card"></i></span>
                   </div>
 
                   <div class="album">
                     <div class="album__info">
-                      <div class="album__info__art"><img src="https://loremflickr.com/320/320/1?lock=100"
-                          alt="When It's Dark Out" /></div>
+                      <div class="album__info__art">
+                        <img src="https://loremflickr.com/320/320/1?lock=100" alt="When It's Dark Out"/>
+                      </div>
                       <div class="album__info__meta">
                         <div class="album__year">1999</div>
                         <div class="album__name">Miss Mellie Hoeger Sr.</div>
-                        <div class="album__actions"><button class="button-light save">Save</button><button
-                            class="button-light more"><i class="ion-ios-more"></i></button>
+                        <div class="album__actions">
+                          <button class="button-light save">Save</button>
+                          <button class="button-light more"><i class="ion-ios-more"></i></button>
                         </div>
                       </div>
                     </div>
+
                     <div class="album__tracks">
                       <div class="tracks">
                         <div class="tracks__heading">
@@ -120,7 +117,6 @@
                           <div class="tracks__heading__length"><i class="ion-ios-stopwatch-outline"></i></div>
                           <div class="tracks__heading__popularity"><i class="ion-thumbsup"></i></div>
                         </div>
-
 
                         <div class="track">
                           <div class="track__number">1</div>
