@@ -29,14 +29,14 @@
 	</div>
 
 	
-		<div class="user-messages-area">
-			<div class="alert alert-danger">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<ul>
-					<li>Errors can go here</li>
-				</ul>
-			</div>
+	<div class="user-messages-area">
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<ul>
+				<li>Errors can go here</li>
+			</ul>
 		</div>
+	</div>
 	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
