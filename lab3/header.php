@@ -11,7 +11,7 @@
     <input type="text" placeholder="Search" /></div>
   <div class="user">
     <div class="user__info"><span class="user__info__img"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/adam_proPic.jpg" alt="Profile Picture" class="img-responsive"/></span>
-      <span class="user__info__name"><span class="first">Username goes here</span>
+      <span class="user__info__name"><span class="first"><?php echo $_SESSION["email"]; ?></span>
     </div>
     <div class="user__actions">
       <div class="dropdown">

@@ -11,7 +11,7 @@
 <html>
 
 <head>
-  <title></title>
+  <title>Spotify</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -22,7 +22,7 @@
 
 <body>
   <?php
-  require_once("header.php");
+    require_once("header.php");
   ?>
 
   <section class="content">

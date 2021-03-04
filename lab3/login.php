@@ -29,7 +29,7 @@
 ?><!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Spotify | Login</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
