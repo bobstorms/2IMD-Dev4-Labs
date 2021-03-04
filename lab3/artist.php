@@ -1,8 +1,39 @@
-<!DOCTYPE html>
+<?php 
+
+  session_start();
+  include_once("functions.inc.php");
+
+  if(!$_SESSION["loggedin"]) {
+    header("Location: login.php");
+    die();
+  }
+
+  $conn = connectDatabase();
+
+  $query = $conn->prepare("select playlists.name from playlists");
+  $query->execute();
+
+  $playlists = $query->fetchAll();
+
+  $artist_id = $_GET["id"];
+
+  $query = $conn->prepare("select artists.name, artists.cover from artists where id = :id");
+  $query->bindValue(":id", $artist_id);
+  $query->execute();
+
+  $artist = $query->fetch();
+
+  $query = $conn->prepare("select * from albums where artist_id = :id");
+  //$query->bindValue(":id", $artist_id);
+  $query->execute();
+
+  $albums = $query->fetchAll();
+
+?><!DOCTYPE html>
 <html>
 
 <head>
-  <title>Artist</title>
+  <title><?php echo $artist["name"]; ?></title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -34,7 +65,9 @@
         <div class="navigation__list">
           <div class="navigation__list__header" role="button" data-toggle="collapse" href="#playlists" aria-expanded="true" aria-controls="playlists">Playlists</div>
           <div class="collapse in" id="playlists">
-            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Playlist name goes here</span></a>
+            <?php foreach($playlists as $playlist): ?>
+            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span><?php echo $playlist["name"]; ?></span></a>
+            <?php endforeach; ?>
           </div>
         </div>
         <!-- / -->
@@ -59,11 +92,11 @@
         <div class="artist__header">
           <div class="artist__info">
             <div class="profile__img">
-              <img src="https://loremflickr.com/320/320/1?lock=1" alt="Artist name here"/>
+              <img src="<?php echo $artist["cover"]; ?>" alt="<?php echo $artist["name"]; ?>"/>
             </div>
             <div class="artist__info__meta">
               <div class="artist__info__type">Artist</div>
-              <div class="artist__info__name">Eveline Collins PhD</div>
+              <div class="artist__info__name"><?php echo $artist["name"]; ?></div>
               <div class="artist__info__actions">
                 <button class="button-dark"><i class="ion-ios-play"></i>Play</button>
                 <button class="button-light">Follow</button><button class="button-light more"><i class="ion-ios-more"></i></button>

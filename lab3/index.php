@@ -1,7 +1,6 @@
 <?php
 
   session_start();
-
   include_once("functions.inc.php");
 
   if(!$_SESSION["loggedin"]) {
@@ -61,7 +60,6 @@
             aria-expanded="true" aria-controls="playlists">Playlists
           </div>
           <div class="collapse in" id="playlists">
-
             <?php foreach($playlists as $playlist): ?>
             <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span><?php echo $playlist["name"]; ?></span></a>
             <?php endforeach; ?>
