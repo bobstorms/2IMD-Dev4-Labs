@@ -2,10 +2,24 @@
 
   session_start();
 
+  include_once("functions.inc.php");
+
   if(!$_SESSION["loggedin"]) {
     header("Location: login.php");
     die();
   }
+
+  $conn = connectDatabase();
+
+  $query = $conn->prepare("select playlists.name from playlists");
+  $query->execute();
+
+  $playlists = $query->fetchAll();
+
+  $query = $conn->prepare("select * from artists");
+  $query->execute();
+
+  $artists = $query->fetchAll();
   
 ?><!DOCTYPE html>
 <html>
@@ -48,11 +62,9 @@
           </div>
           <div class="collapse in" id="playlists">
 
-            <!-- LOOP OVER PLAYLISTS -->
-            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span>Playlist name goes
-                here</span></a>
-            <!-- END LOOP -->
-            </a>
+            <?php foreach($playlists as $playlist): ?>
+            <a href="#" class="navigation__list__item"><i class="ion-ios-musical-notes"></i><span><?php echo $playlist["name"]; ?></span></a>
+            <?php endforeach; ?>
           </div>
         </div>
         <!-- / -->
@@ -76,13 +88,14 @@
       <div role="tabpanel" class="tab-pane" id="related-artists">
         <div class="media-cards">
           <!-- START ARTIST LOOP -->
-
+          <?php foreach($artists as $artist): ?>
           <div class="media-card">
-            <div class="media-card__image" style="background-image: url(https://loremflickr.com/320/320/1?lock=1);">
+            <div class="media-card__image" style="background-image: url(<?php echo $artist["cover"]; ?>);">
               <i class="ion-ios-play"></i>
             </div>
-            <a href="artist.php?id=1" class="media-card__footer">Eveline Collins PhD</a>
+            <a href="artist.php?id=<?php echo $artist["id"]; ?>" class="media-card__footer"><?php echo $artist["name"]; ?></a>
           </div>
+          <?php endforeach; ?>
 
           <!-- END ARTIST LOOP -->
         </div>
