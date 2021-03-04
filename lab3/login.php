@@ -1,4 +1,10 @@
 <?php
+
+	if(!empty($_POST)) {
+
+		
+
+	}
 	
 ?><!DOCTYPE html>
 <html>
@@ -31,15 +37,16 @@
 		
 	</div>
 
-	
+	<?php if(isset($error)): ?>
 	<div class="user-messages-area">
 		<div class="alert alert-danger">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<ul>
-				<li>Errors can go here</li>
+				<li>Wrong password.</li>
 			</ul>
 		</div>
 	</div>
+	<?php endif; ?>
 	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
