@@ -1,8 +1,28 @@
 <?php
 
+	session_start();
+
+	include_once("functions.inc.php");
+
+	if($_SESSION["loggedin"]) {
+		header("Location: index.php");
+		die();
+	}
+
 	if(!empty($_POST)) {
 
-		
+		$email = $_POST["email"];
+		$password = $_POST["password"];
+
+		if(canLogin($email, $password)) {
+			echo "Logged in.";
+			$_SESSION["loggedin"] = true;
+            $_SESSION["email"] = $email;
+			header("Location: index.php");
+			die();
+		} else {
+			$error = true;
+		}
 
 	}
 	
@@ -42,7 +62,7 @@
 		<div class="alert alert-danger">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<ul>
-				<li>Wrong password.</li>
+				<li>That combination of email and password doesn't exist.</li>
 			</ul>
 		</div>
 	</div>
