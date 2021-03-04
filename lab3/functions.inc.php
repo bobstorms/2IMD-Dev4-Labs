@@ -4,11 +4,11 @@
         return new PDO("mysql:host=localhost;dbname=spotify", "root", "root");
     }
 
-    function canLogin($username, $password) {
+    function canLogin($email, $password) {
 
         $conn = connectDatabase();
-        $query = $conn->prepare("select * from users where username = :username");
-        $query->bindValue(":username", $username);
+        $query = $conn->prepare("select * from users where email = :email");
+        $query->bindValue(":email", $email);
         $query->execute();
 
         $user = $query->fetch();
