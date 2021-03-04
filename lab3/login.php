@@ -18,11 +18,13 @@
 		<div class="liner"></div>
 		<div id="form">
 			<form method="post" action>
-				<input name="email" placeholder="Email" type="email" required autofocus /><input name="password" placeholder="Password" type="password" required />
+				<input name="email" placeholder="Email" type="email" required autofocus />
+				<input name="password" placeholder="Password" type="password" required />
 				<h5>
 					Remember
 				</h5>
-				<input class="btn-toggle btn-toggle-round" id="btn-toggle-1" name="remember" type="checkbox" /><label for="btn-toggle-1"></label><input name="login" type="submit" value="Log in" />
+				<input class="btn-toggle btn-toggle-round" id="btn-toggle-1" name="remember" type="checkbox" />
+				<label for="btn-toggle-1"></label><input name="login" type="submit" value="Log in" />
 			</form>
 		</div>
 		
