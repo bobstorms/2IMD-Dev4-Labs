@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+
+  session_start();
+
+  if(!$_SESSION["loggedin"]) {
+    header("Location: login.php");
+    die();
+  }
+  
+?><!DOCTYPE html>
 <html>
 
 <head>

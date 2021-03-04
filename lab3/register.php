@@ -1,5 +1,9 @@
 <?php 
 
+	session_start();
+
+	include_once("functions.inc.php");
+
 	if(!empty($_POST)) {
 		$email = $_POST["email"];
 		$password = $_POST["password"];
@@ -7,7 +11,24 @@
 
 		if(strlen($password) >= 8) {
 			if($password === $password_conf) {
-				// rest code
+
+				$options = [
+					"cost" => 14
+				];
+				$password = password_hash($password, PASSWORD_DEFAULT, $options);
+				
+				$conn = connectDatabase();
+				$query = $conn->prepare("insert into users (email, password) values (:email, :password)");
+				$query->bindValue(":email", $email);
+				$query->bindValue(":password", $password);
+				$query->execute();
+
+				$_SESSION["username"] = $username;
+				$_SESSION["loggedin"] = true;
+
+				header("Location: index.php");
+				die();
+
 			} else {
 				$error = true;
 				$error_match = true;
