@@ -24,7 +24,8 @@
 					Remember
 				</h5>
 				<input class="btn-toggle btn-toggle-round" id="btn-toggle-1" name="remember" type="checkbox" />
-				<label for="btn-toggle-1"></label><input name="login" type="submit" value="Log in" />
+				<label for="btn-toggle-1"></label>
+				<input name="login" type="submit" value="Log in" />
 			</form>
 		</div>
 		
