@@ -8,7 +8,7 @@
     die();
   }
 
-  $conn = connectDatabase();
+  include_once("database/connection.php");
 
   $query = $conn->prepare("select playlists.name from playlists");
   $query->execute();
