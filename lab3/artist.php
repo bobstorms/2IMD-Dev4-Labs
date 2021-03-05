@@ -24,7 +24,7 @@
   $artist = $query->fetch();
 
   $query = $conn->prepare("select * from albums where artist_id = :id");
-  //$query->bindValue(":id", $artist_id);
+  $query->bindValue(":id", $artist_id);
   $query->execute();
 
   $albums = $query->fetchAll();
@@ -127,14 +127,15 @@
                     <span class="view-type"><i class="fa fa-list list active"></i><i class="fa fa-th-large card"></i></span>
                   </div>
 
+                  <?php foreach($albums as $album): ?>
                   <div class="album">
                     <div class="album__info">
                       <div class="album__info__art">
-                        <img src="https://loremflickr.com/320/320/1?lock=100" alt="When It's Dark Out"/>
+                        <img src="<?php echo $album["cover"]; ?>" alt="<?php echo $album["title"]; ?>"/>
                       </div>
                       <div class="album__info__meta">
-                        <div class="album__year">1999</div>
-                        <div class="album__name">Miss Mellie Hoeger Sr.</div>
+                        <div class="album__year"><?php echo $album["year"]; ?></div>
+                        <div class="album__name"><?php echo $album["title"]; ?></div>
                         <div class="album__actions">
                           <button class="button-light save">Save</button>
                           <button class="button-light more"><i class="ion-ios-more"></i></button>
@@ -151,18 +152,28 @@
                           <div class="tracks__heading__popularity"><i class="ion-thumbsup"></i></div>
                         </div>
 
+                        <?php
+                          $query = $conn->prepare("select * from tracks where album_id = :id");
+                          $query->bindValue(":id", $album["id"]);
+                          $query->execute();
+                        
+                          $tracks = $query->fetchAll();
+                        ?>
+                        <?php foreach($tracks as $key => $track): ?>
                         <div class="track">
-                          <div class="track__number">1</div>
+                          <div class="track__number"><?php echo $key + 1; ?></div>
                           <div class="track__added"><i class="ion-checkmark-round added"></i></div>
-                          <div class="track__title">Track title here</div>
+                          <div class="track__title"><?php echo $track["title"]; ?></div>
                           <div class="track__explicit"><span class="label">Explicit</span></div>
                           <div class="track__length">1:11</div>
                           <div class="track__popularity"><i class="ion-arrow-graph-up-right"></i></div>
                         </div>
+                        <?php endforeach; ?>
 
                       </div>
                     </div>
                   </div>
+                  <?php endforeach; ?>
 
                 </div>
               </div>
